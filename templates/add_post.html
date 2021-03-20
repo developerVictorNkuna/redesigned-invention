@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<hr />
+
+<h1>Add Post ...</h1>
+<!-- <hr /> -->
+
+<div class="form-group">
+
+    <form method = "POST" >
+    {% csrf_token %}
+    {{ form.as_p }}  <!--as_table,as_list,the display of the form -->
+
+    <button class="btn btn-secondary">Post</button>
+</form>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

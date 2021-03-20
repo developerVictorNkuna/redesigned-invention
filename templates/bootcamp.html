@@ -1,0 +1,101 @@
+{% extends  "base.html"%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--this will load bootsrap-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--importing django css for the form template-->
+    
+
+    <title>base html page</title>
+    <style >
+        fieldset {
+            background-color: #eeeeee;
+          }
+          
+          legend {
+            background-color: gray;
+            color: white;
+            padding: 5px 10px;
+          }
+          
+          input {
+            margin: 10px;
+          }
+          
+          #date_of_birth {
+            margin:10px;
+            height: 5px
+          }
+          
+          #contact_number{
+            width:50%
+          }
+          
+          #math_marks{
+            width:50%
+          }
+          
+          #english_marks{
+            width:50%
+          }
+          
+          #cover_letter{
+            width:75%
+          }
+          #info-obtained{
+            width:50%
+          }
+    </style>
+</head>
+<body>
+    <h5>It's easy to apply for our Coding Bootcamp-Just complete the form below to begin the application processs</h5><br />
+    <form action="/apply/" method="post">
+        <fieldset>
+            <legend>Bootcamp SA:Vintech Central </legend>
+            <label for=fullname>Full Name</label>
+            <input type="text" id="fullname" name="fname" value="Your full name and surname" required><br /><br />
+            <label for="contact_number">Contact Number</label>
+            <input type="integer" id="contact_number" name="contact" value="How can  we contact you telephonically?" required><br /><br />
+            <label for=email>Email Address</label>
+            <input type="email" id="email" name="email" required value="Your email address"><br /><br />
+            <label for="gender">Gender</label>
+            <select id=:gender"><br/>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+                
+            </select><br /><br/>
+            <label for="date_of_birth">Date of birth</label>
+            <input type="date" id="date_of_birth" name="date-of-birth" value="Your D.O.B - click the year to insert your own" required><br/><br/>
+            <label for="ethnic tribe">Ethinicity</label>
+            <select id="ethinicity"><br/>
+                <option value="Black African">Black African</option>
+                <option value="Colored">Colored</option>
+                <option value="White">White</option>
+                <option value="Indian ">Indian</option>
+                <option value="Asian">Asian</option>
+                <option value="Other">Other</option>
+            </select><br/><br/>
+            <label for ="localtion ">Locaction</label>
+            <input type="text" id="location" name="localtion" value="City or suburb" ><br/><br/>
+            <label for="Maths-marks">Matric Math Marks</label>
+            <input type="integer" id="math_marks" name="maths_marks" value="The mark you received for Math in matric" required ><br /><br />
+            <label for="english-marks">Matric English Marks</label>
+            <input type="integer" id="english_marks" name="english_marks" value="The mark you received for Math in matric" required ><br /><br />
+            <label for="cover_letter">Cover Letter</label>
+            <input type="integer" id="cover_letter" name="cover_letter" value="Why do you think you should be accepted and why do you want to learn how to code?" required ><br /><br />
+            
+            <label for="Maths-marks">How did you hear about this opportunity</label>
+            <input type="text" id="info-obtained" name="info-obtained" value="Friends ? ,social media?, posters print?" required ><br /><br />
+            <input type="submit" value="Submit">
+
+        </fieldset>
+
+    </form>
+
+    
+</body>
+</html>

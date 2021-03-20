@@ -1,0 +1,12 @@
+<!-- templates/email/contact_us_email.html -->
+{% extends "base.html" %}
+{% block title %} Send Email {% endblock %}
+
+<h1>Contact Us</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-actions">
+      <button type="submit">Send</button>
+    </div>
+</form>

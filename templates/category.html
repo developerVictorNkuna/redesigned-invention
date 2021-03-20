@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% if  category_post %}
+<h1>{{ category }}</h1>
+<ul>
+{% for post in category_post   %}
+
+<div class="container">
+  <div class="row">
+     <div class="col-md-8 mt-3 left">
+         <h1>Categories</h1>
+
+       {% for post in post_list %}
+       <div class="card mb-4" >
+         <div class="card-body">
+           <h2 class="card-title"><span>{{ post.title }}</span></h2>
+           <p class="card-text text-muted h6"><span>Author:{{ post.author }} <br /></span>
+           <p class ="card-text text-muted h6"><a href="{%url 'update_post' pk=post.pk %}">(Edit Post)</a></p>
+             <p class="card-text text-muted h6"><a href="{% url 'delete_post' pk=post.pk %}">(Delete  Post)</a></p>
+             <p class="card-text text-muted h6"><a href="{% url 'add_category' %}">Add Category</a></p>
+             <span>Published Date: {{ post.created_on}}</span> </p>
+             <p class="card-text">{{post.content|slice:":200" }}</p>
+             <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary">{{  post.title  }}</a>
+           </div>
+         </div>
+       </div>
+       {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+     </div>
+   </div>
+
+   {% endfor %}
+
+
+
+ 
+
+</ul>
+{% endfor %}
+{% else %}
+
+<h1 style="text-align:center;">Sorry the page does not exists! ...</h1>
+{% endif %}
+{% endblock  %} 
